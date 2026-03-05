@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Saver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="nav">
+        <div class="container"  id="navContainer">
+            <h1 class="navHeader">Link Saver App</h1>
+            <button id="addBtn">Save URL</button>
+        </div>
+    </nav>   
+
+    <div class="linkData">
+        <p>Link Name: </p>
+        <p>Link URL: </p>
+    </div>
+
+    <div class="panel container">
+        <h2 class="panelHeader">Add Link</h2>
+        <form id="addLinkPanel">
+                <label>Enter URL</label>
+                <input type="text" name="URL" id="link" placeholder="URL"> 
+                <label>Enter title of URL</label>
+                <input type="text" name="title" id="title" placeholder="Title">
+                <label>Enter Category of URL</label>
+                <input type="text" name="category" id="category" placeholder="Category(Comma Seperated)">
+
+                <div id="addedCategories">
+                    
+                </div>
+                <input type="submit" value="Submit" id="submitBtn">
+                <input type="submit" value="Cancel" id="cancelBtn">
+
+        </form>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
