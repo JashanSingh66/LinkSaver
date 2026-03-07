@@ -31,7 +31,9 @@ button:hover{
     width: 80%;
     margin: 0 auto;
 }
-
+.hidden{
+    display: none;
+}
 
 
 /* Components - these are the all components in css  */
@@ -72,7 +74,9 @@ button:hover{
     border-radius: 10px;
     box-shadow: 0px 0px 10px var(--color-secondary);
     padding: 30px 10px 30px 10px;
+    
 }
+
 .panelHeader{
     font-size: 24px;
     margin-bottom: 20px;
@@ -93,7 +97,10 @@ button:hover{
 #addLinkPanel label{
     font-size: 14px;
 }
-
+#addLinkPanel input[type="submit"]{
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
 
 /* Categories */
 #addedCategories{
@@ -102,7 +109,7 @@ button:hover{
     gap: 10px;
 }
 #addedCategories div{
-    background-color: red;
+    background-color: var(--color-secondary);
     color: white;
     border-radius: 4px;
     box-shadow: 0px 2px 10px black;
@@ -110,5 +117,5 @@ button:hover{
 }
 #addedCategories div:hover{
     cursor: pointer;
-    padding: 8px;
+
 }
