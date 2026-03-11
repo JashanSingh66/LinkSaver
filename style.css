@@ -67,6 +67,31 @@ button:hover{
 }
 
 
+/* Display */
+
+#linkData{
+    display: flex;
+    justify-content: center;
+}
+#linkData div{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+#linkData div:hover{
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+
+
 
 /* Panel */
 .panel{
