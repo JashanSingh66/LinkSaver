@@ -8,68 +8,87 @@ add.addEventListener("click",function(e){
     formPanel[0].classList.toggle("hidden");
 })
 
+// adding the categories in an array
+const linkCategory=document.getElementById("category");
+let linkCategories=[];
+linkCategory.addEventListener("keydown",function(event){
+    if(event.key === "Enter"){
+        event.preventDefault();
+        if(linkCategory.value===""){
+            alert("Please Enter Category");
+        }else{
+            linkCategories.push(linkCategory.value.trim());
+            linkCategory.value="";
+        }
+    }
+});
 
 
-const data=[];
+// event listener for the form 
 const form=document.getElementById("addLinkPanel");
 form.addEventListener("submit",function(event){
     event.preventDefault();
     const URL=document.getElementById("link");
     const title=document.getElementById("title");
-    const category=document.getElementById("category");
-    const link={
-        url:URL.value,
-        name:title.value,
-        catg:category.value
+    if(URL.value === ""){
+        alert("Please Enter Title");
     }
-    data.push(link);
-    print(link);
-    formPanel[0].classList.toggle("hidden");
-    console.log(data);
-    
+    else if(title.value === ""){
+        alert("Please Enter URL");
+    }else{
+        const link={
+            url:URL.value,
+            title:title.value,
+            catg:linkCategories
+        }
+        linkCategories=[];
+        URL.value="";
+        title.value="";
+
+        // For local storage storing
+        localStorage.setItem("link",JSON.stringify(link));
+
+        // For printing the data
+        print();
+        formPanel[0].classList.toggle("hidden"); 
+    }
 })
-function print(link){
-    console.log(link);
+
+// For displaying the links on the page 
+function print(){
     const linkData=document.getElementById("linkData");
     const p1=document.createElement("p");
-    const p2=document.createElement("p");     
-    const c1=document.createTextNode(link.name);
-    const c2=document.createTextNode(link.catg);
+    const p2=document.createElement("p");  
+    const btn=document.createElement("button"); 
+    const a=document.createElement("a");  
+    const data=JSON.parse(localStorage.getItem("link"));
+    const c1=document.createTextNode("Name : "+ data.title);
+    const c2=document.createTextNode("Category : "+data.catg);
+    const c3=document.createTextNode("URL : ");
+    a.href=data.url;
+    a.textContent=data.url;
     p1.appendChild(c1);
     p2.appendChild(c2);
-    const newDiv=document.createElement("div");
+    btn.appendChild(c3);
+    a.classList.add("hidden");
 
-    newDiv.appendChild(p1);
-    newDiv.appendChild(p2);
-    newDiv.addEventListener("click",function(e){
+    const div1=document.createElement("div");
+    div1.appendChild(p1);
+    div1.appendChild(p2);
+    div1.appendChild(btn);
+    div1.appendChild(a);
+    linkData.appendChild(div1);
+
+    a.target="_blank";
+    btn.addEventListener("click",function(e){
+        a.classList.toggle("hidden");
         e.preventDefault();
-        console.log(link.url);
     })
-    linkData.appendChild(newDiv);
-    
-
 } 
-console.log(form.name);
+console.log(JSON.parse(localStorage.getItem("link")));
 
 
 
-
-
-// adding the categories in an array
-const linkCategory=document.getElementById("category");
-let linkCategories=[];
-linkCategory.addEventListener("keydown",function(event){
-    if(event.key === ","){
-        event.preventDefault();
-        linkCategories.push(linkCategory.value.trim());
-        linkCategory.value="";
-        displayLinkCategories();
-    }
-});
-// for displaying categories on adding
-function displayLinkCategories(){
-    console.log(linkCategories);
-}
 
 
 
