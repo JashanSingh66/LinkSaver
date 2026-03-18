@@ -16,7 +16,7 @@ linkCategory.addEventListener("keydown",function(event){
         event.preventDefault();
         if(linkCategory.value===""){
             alert("Please Enter Category");
-        }else{
+        }else{ 
             linkCategories.push(linkCategory.value.trim());
             linkCategory.value="";
         }
@@ -71,7 +71,6 @@ function print(){
     p2.appendChild(c2);
     btn.appendChild(c3);
     a.classList.add("hidden");
-
     const div1=document.createElement("div");
     div1.appendChild(p1);
     div1.appendChild(p2);
@@ -85,8 +84,17 @@ function print(){
         e.preventDefault();
     })
 } 
-console.log(JSON.parse(localStorage.getItem("link")));
 
+
+// adding user login/signup logic 
+
+const loginBtn=document.getElementById("loginBtn");
+const login=document.getElementsByClassName("login");
+loginBtn.addEventListener("click",function(e){
+    e.preventDefault();
+    login[0].classList.toggle("hidden");
+    
+})
 
 
 

@@ -10,13 +10,15 @@
     <nav id="nav">
         <div class="container"  id="navContainer">
             <h1 class="navHeader">Link Saver App</h1>
-            <button id="addBtn">Save URL</button>
+            <div class="btn">
+                <button id="addBtn">Save URL</button>
+                <button id="loginBtn">Login</button>
+            </div>
         </div>
     </nav>   
    <h3 style="text-align: center;">Saved Links: </h3>
     
     <div id="linkData">
-        
     </div>
 
     <div class="panel container hidden">
@@ -38,6 +40,17 @@
         </form>
     </div>
     
+    <div class="login container hidden">
+        <h2 class="panelHeader">Sign Up</h2>
+        <form id="addLinkPanel">
+            <label>Username</label>
+            <input type="text" name="name" placeholder="Enter your name">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="enter your mail">
+            <label>Password</label>
+            <input type="password" name="pass" placeholder="Enter your password">
+        </form>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>

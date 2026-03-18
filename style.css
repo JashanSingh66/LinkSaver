@@ -1,7 +1,7 @@
 /* Variables  - this is custom css (reusable values)*/
 :root{
-    --color-primary: #e0fbe1;
-    --color-secondary:#5c745c;
+    --color-primary: #cedbf5;
+    --color-secondary:#101e67;
 }
 
 
@@ -54,17 +54,29 @@ button:hover{
     justify-content: space-between;
     align-items: center;
 }
-
+.btn button{
+    font-size: 20px;
+    background-color:var(--color-primary);
+    color: var(--color-secondary);
+    padding: 5px;
+    border-radius: 5px;
+}
 .navHeader{
     color: var(--color-primary);
     font-size: 28px;
 }
-#addBtn{
+/* #addBtn{
     font-size: 24px;
     background-color:var(--color-primary);
     color: var(--color-secondary);
     padding: 5px;
 }
+#loginBtn{
+    font-size: 24px;
+    background-color:var(--color-primary);
+    color: var(--color-secondary);
+    padding: 5px;
+} */
 
 
 /* Display */
@@ -88,7 +100,8 @@ button:hover{
     margin-bottom: 5px;
 }
  #linkData button{
-    background-color: rgb(173, 231, 173);
+    background-color:var(--color-secondary);
+    color: white;
     padding:5px;
  }
 #linkData button:hover{
@@ -149,4 +162,14 @@ button:hover{
 #addedCategories div:hover{
     cursor: pointer;
 
+}
+
+/* Login */
+
+.login{
+     background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--color-secondary);
+    padding: 30px 10px 30px 10px;
+    
 }
